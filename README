@@ -1,0 +1,64 @@
+Canvas Element
+
+in html include canvas element using code similar to the following
+
+<canvas id="Canvas1" width="470" height="300"> Your browser does not support the canvas element. </canvas>
+
+
+
+Table
+
+Table needs to be declared similar to 
+
+<table cellspacing="0" cellpadding="0" id="browserTable">
+  <caption>Browser Usage in %</caption>
+    <tr>
+      <th>Internet Explorer</th>
+      <td>18.9</td>
+    </tr>
+    <tr>
+      <th>Firefox</th>
+      <td>36.3</td>
+    </tr>
+    <tr>
+      <th>Chrome</th>
+      <td>37.3</td>
+    </tr>
+    <tr>
+      <th>Safari</th>
+      <td>4.4</td>
+    </tr>
+    <tr>
+      <th>Opera</th>
+      <td>2.3</td>
+    </tr>
+  </table>
+
+JavaScript
+
+1. Include Jquery 
+2. Include the plugin
+3. Use the plugin
+
+Following is a sample
+
+<script type="text/javascript" src="js/jquery.min.js"></script> 
+<script type="text/javascript" src="js/jqCanvasCharts.js"></script> 
+<script type="text/javascript">
+
+$('#browserTable').canvasCharts('barChart',{
+	canvasId:'Canvas1',
+	barWidth:20,
+	barGap:30,
+	steps:7
+});
+
+$('#browserTable').canvasCharts('pieChart',{
+	canvasId:'Canvas2'
+});
+$('#browserTable').canvasCharts('lineChart',{
+	canvasId:'Canvas3',
+	steps:7
+});
+
+</script>
