@@ -1,0 +1,80 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Canvas Plugin Demo</title>
+<style>
+/* reset.css */
+html {margin:0;padding:0;border:0;}
+body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, code, del, dfn, em, img, q, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, dialog, figure, footer, header, hgroup, nav, section {margin:0;padding:0;border:0;font-weight:inherit;font-style:inherit;font-size:12px;font-family: Arial, Helvetica, sans-serif;vertical-align:baseline;}
+article, aside, dialog, figure, footer, header, hgroup, nav, section {display:block;}
+body {line-height:1.5;background:white;}
+table {border-collapse:separate;border-spacing:0;}
+caption, th, td {text-align:left;font-weight:normal;float:none !important;}
+table, th, td {vertical-align:middle;}
+blockquote:before, blockquote:after, q:before, q:after {content:'';}
+blockquote, q {quotes:"" "";}
+a img {border:none;}
+:focus {outline:0;}
+/* */
+.wrapper{ margin:20px 2% 0}
+canvas { border: 1px solid #c4c4c4; margin-bottom:10px}
+table{border-top:solid 1px #ccc; border-left:solid 1px #ccc}
+table th, table td{ border-right:solid 1px #ccc; border-bottom:solid 1px #ccc; padding:5px 10px}
+
+</style>
+</head>
+
+<body>
+<div class="wrapper">
+  <canvas id="Canvas1" width="470" height="300"> Your browser does not support the canvas element. </canvas>
+  <canvas id="Canvas2" width="500" height="300"> </canvas>
+  <canvas id="Canvas3" width="450" height="300"> </canvas>
+
+  <table cellspacing="0" cellpadding="0" id="browserTable">
+  <caption>Browser Usage in %</caption>
+    <tr>
+      <th>Internet Explorer</th>
+      <td>18.9</td>
+    </tr>
+    <tr>
+      <th>Firefox</th>
+      <td>36.3</td>
+    </tr>
+    <tr>
+      <th>Chrome</th>
+      <td>37.3</td>
+    </tr>
+    <tr>
+      <th>Safari</th>
+      <td>4.4</td>
+    </tr>
+    <tr>
+      <th>Opera</th>
+      <td>2.3</td>
+    </tr>
+  </table>
+
+</div>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
+<script type="text/javascript" src="js/jqCanvasCharts.js"></script> 
+<script type="text/javascript">
+
+$('#browserTable').canvasCharts('barChart',{
+	canvasId:'Canvas1',
+	barWidth:20,
+	barGap:30,
+	steps:7
+});
+
+$('#browserTable').canvasCharts('pieChart',{
+	canvasId:'Canvas2'
+});
+$('#browserTable').canvasCharts('lineChart',{
+	canvasId:'Canvas3',
+	steps:7
+});
+
+</script>
+</body>
+</html>
